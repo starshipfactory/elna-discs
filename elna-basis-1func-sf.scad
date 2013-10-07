@@ -44,10 +44,10 @@ difference() {
 	// Transport hole
 	union() {
 		translate([0, 12.25, -0.05])
-			cylinder(h = 5.6, r=1.5);
+			cylinder(h = 5.6, r=1.75);
 		translate([0, 12.75, -0.05])
-			cylinder(h = 5.6, r=1.5);
+			cylinder(h = 5.6, r=1.75);
 		translate([0, 12.5, -0.05])
-			cube(size = [1.5, 0.5, 5.6]);
+			cube(size = [1.75, 0.5, 5.6]);
 	}
 }
