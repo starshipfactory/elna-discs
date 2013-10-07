@@ -1,4 +1,4 @@
-difference() {
+translate([0, 0, 7]) rotate(a=[0,180,0]) difference() {
 	union() {
 		// Big cylinder for placement inside the machine.
 		cylinder(h = 7, r = 17);
