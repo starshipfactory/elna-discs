@@ -4,7 +4,7 @@ difference() {
 		cylinder(h = 7, r = 17);
 
 		// Outer cylinder; any sewing information would go here.
-		translate([0, 0, 1]) cylinder(h = 3.5, r = 22);
+		translate([0, 0, 1]) cylinder(h = 3.5, r = 21.5);
 	}
 
 	// Subtract the inner hole. Be very generous.
