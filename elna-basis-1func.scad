@@ -12,11 +12,11 @@ difference() {
 		cylinder(h = 10, r = 17, center=true);
 
 	// Subtract the lower cone.
-	cylinder(h = 2, r = 20);
+	cylinder(h = 2.05, r = 20);
 
 	// Subtract the diagonal layer the disk rests on.
-	translate([0, 0, 2.005])
-		cylinder(h = 1.51, r1 = 20, r2 = 17);
+	translate([0, 0, 2])
+		cylinder(h = 1.5, r1 = 20, r2 = 17);
 
 	// Transport hole
 	union() {
