@@ -4,14 +4,23 @@ translate([0, 0, 7]) rotate(a=[0,180,0]) difference() {
 		cylinder(h = 7, r = 17);
 
 		// Outer cylinder; any sewing information would go here.
-		//translate([0, 0, 1]) cylinder(h = 3.5, r = 21.5);
 		translate([0, 0, 1]) cylinder(h = 3.5, r = 19);
-		// Sewing Information
-//		translate([0, 11, 1]) cylinder(h = 3.5, r = 10.5);
-//		rotate(a=[0, 0, 120]) translate([0, 11, 1]) cylinder(h = 3.5, r = 10.5);
-//		rotate(a=[0, 0, 240]) translate([0, 11, 1]) cylinder(h = 3.5, r = 10.5);
-		
-		translate([0, 0, 1]) cylinder(h = 3.5, r = 21.5);
+
+		// Sewing Information		
+		translate([0, 0, 1]){ 
+			intersection() {
+				cylinder(h = 3.5, r = 21.5);
+				translate([0, 10, 0]) cylinder(h = 3.5, r = 12.5);
+			}
+			rotate(a=[0, 0, 120]) intersection() {
+				cylinder(h = 3.5, r = 21.5);
+				translate([0, 10, 0]) cylinder(h = 3.5, r = 12.5);
+			}
+			rotate(a=[0, 0, 240]) intersection() {
+				cylinder(h = 3.5, r = 21.5);
+				translate([0, 10, 0]) cylinder(h = 3.5, r = 12.5);
+			}
+		}
 
 	}
 
