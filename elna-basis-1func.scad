@@ -1,3 +1,6 @@
+// Rotate the disc by 180 degrees to flip it upside down, which
+// makes it easier to print the hole, etc. Lift it up by 7mm to bring
+// it back above the axis // (the entire body is 7mm high).
 translate([0, 0, 7]) rotate(a=[0,180,0]) difference() {
 	union() {
 		// Big cylinder for placement inside the machine.
