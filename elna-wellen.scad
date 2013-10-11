@@ -1,3 +1,5 @@
+include <disc.scad>;
+
 // Rotate the disc by 180 degrees to flip it upside down, which
 // makes it easier to print the hole, etc. Lift it up by 7mm to bring
 // it back above the axis // (the entire body is 7mm high).
@@ -8,8 +10,11 @@ translate([0, 0, 7]) rotate(a=[0,180,0]) difference() {
 
 		// Outer cylinder; any sewing information would go here.
 		//translate([0, 0, 1]) cylinder(h = 3.5, r = 21.5);//maximum
-		translate([0, 0, 1]) cylinder(h = 3.5, r = 19);//minimum
-		translate([0, 1.25, 1]) cylinder(h = 3.5, r = 20.25);//Durchschnitt
+		//translate([0, 0, 1]) cylinder(h = 3.5, r = 19);//minimum
+		//translate([0, 1.25, 1]) cylinder(h = 3.5, r = 20.25);//Durchschnitt
+
+		translate([0, 0, 1]) scale([19, 19, 1])
+			linear_extrude(height = 3.5, center = false, slices = 1, convexity = 10) disc();
 	}
 
 	// Subtract the inner hole. Be very generous.
@@ -36,11 +41,11 @@ translate([0, 0, 7]) rotate(a=[0,180,0]) difference() {
 	// Mark the 18 stitches.
 	// This is where the needle is at its deepest point.
 	// Only for modelling, remove before print!
-	for (z=[0 : 17]) // 18 times
+	/*for (z=[0 : 17]) // 18 times
 	{
 		rotate(a=[0, 0, z*20]) { 
    		translate([0, 17, 7])
 				cylinder(h= 1, r=1, center=true);
 		}
-	}
+	}*/
 }
