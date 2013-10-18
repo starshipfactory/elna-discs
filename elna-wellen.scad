@@ -21,8 +21,8 @@ translate([0, 0, 7]) rotate(a=[0,180,0]) difference() {
 	translate([0, 0, 4])
 		cylinder(h = 10, r = 8.5, center=true);
 
-	// Subtract the lower cone.
-	cylinder(h = 2.01, r = 10);
+	// Subtract the lower cone (add a little leeway to avoid glitches).
+	translate([0, 0, -0.01]) cylinder(h = 2.02, r = 10);
 
 	// Subtract the diagonal layer the disk rests on.
 	translate([0, 0, 2])
