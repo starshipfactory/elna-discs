@@ -60,7 +60,7 @@ for (my $i = 0; $i < 18; $i++) {
 	my @p;
 	if (defined($func)) {
 		if (!$cont) {
-			my $_;
+			local $_;
 			$_ = ($i + 0) / 18; $p[0] = eval($func);
 			$_ = ($i + 1) / 18; $p[1] = eval($func);
 			$_ = ($i + 2) / 18; $p[2] = eval($func);
